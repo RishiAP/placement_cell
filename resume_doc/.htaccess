@@ -1,0 +1,7 @@
+Deny from all
+<Files "_file_fetcher.php">
+    Allow from all
+</Files>
+<Files /images>
+    Deny from all
+</Files>
