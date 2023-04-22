@@ -104,6 +104,7 @@ document.getElementById('main_search').addEventListener('input',function () {
   xhr2.onload=function(){
     document.getElementById('search_results').innerHTML=``;
     data=JSON.parse(this.responseText);
+    document.getElementById('search_results').style.display="none";
     data.company.forEach(comp => {
         newResult=document.createElement('a');
         newResult.setAttribute('class',"list-group-item list-group-item-action");
@@ -111,14 +112,22 @@ document.getElementById('main_search').addEventListener('input',function () {
         newResult.innerHTML=`<div><img src="`+comp.image_data+`" style="max-width:50px;">
         <h5 class="mb-1">`+comp.name+`</h5></div>`;
         document.getElementById('search_results').appendChild(newResult);
+        document.getElementById('search_results').style.display="flex";
     });
     data.student.forEach(stu => {
         newResult=document.createElement('a');
         newResult.setAttribute('class',"list-group-item list-group-item-action");
         newResult.setAttribute('href',"/placement_cell/student_profile/"+stu.username);
-        newResult.innerHTML=`<div><img src="`+stu.image_data+`" style="max-width:50px;">
+        if(stu.image_data==""){
+            $image=`<i class="bi bi-person-circle" style="font-size:50px;"></i>`;
+        }
+        else{
+            $image=`<img src="`+stu.image_data+`" style="max-width:50px;">`;
+        }
+        newResult.innerHTML=`<div>`+$image+`
         <div class="d-flex flex-column"><h6 class="mb-1">`+stu.username+`</h6><p class="m-0">`+stu.name+`</p><div></div>`;
         document.getElementById('search_results').appendChild(newResult);
+        document.getElementById('search_results').style.display="flex";
     });
   }
   first_letter=this.value.substring(0,1);

@@ -1,6 +1,10 @@
 @media screen and (max-width:1350px){
     main, #base-info-section{
         flex-direction: column;
+        gap: 1rem;
+    }
+    #main_search{
+        margin-bottom: 1rem;
     }
     .contact-section{
         flex-wrap: wrap;
