@@ -4,12 +4,15 @@ h1 span{
 main img{
     max-height: 600px;
 }
-:root,[data-bs-theme=dark]{
+[data-bs-theme=dark]{
     --my-label-color : #6ba9fb;
     --input-border-color:#1a73e8;
+    --input-color-scheme: dark;
 }
-:root,[data-bs-theme=light]{
+[data-bs-theme=light]{
     --my-label-color : rgb(26, 115, 232);
+    --input-border-color:#6ba9fb;
+    --input-color-scheme: light;
 }
 .btn-info,.btn-info:focus,.btn-info:active{
     color: var(--bs-body-bg) !important;
@@ -39,6 +42,7 @@ main img{
 input{
     z-index: 1 !important;
     border-radius: 0.375rem !important;
+    color-scheme: var(--input-color-scheme);
 }
 .is-invalid{
     --input-border-color:var(--bs-danger);
@@ -98,6 +102,7 @@ input{
 }
 #user_profile_photo{
     max-height:400px;
+    min-width: 200px;
     position:relative;
     left:0%;
     user-drag: none;
@@ -138,4 +143,81 @@ table .is-invalid{
 }
 input::file-selector-button {
     display: none;
+}
+.company_favicon_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (max-width:1400px){
+    .applicants-list-img-section{
+        width: 100% !important;
+    }
+    .applicants-list-img{
+        border-radius: 50% !important;
+    }
+}
+.btn-outline-adobe{
+    --bs-btn-color: #FA0F00;
+    --bs-btn-border-color: #FA0F00;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #FA0F00;
+    --bs-btn-hover-border-color: #FA0F00;
+    --bs-btn-focus-shadow-rgb: 255,193,7;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #FA0F00;
+    --bs-btn-active-border-color: #FA0F00;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #ffc107;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #ffc107;
+    --bs-gradient: none;
+}
+.user-right-section .btn-link{
+    font-weight: bold;
+    text-decoration: none;
+}
+.user-right-section .btn-link:hover, .user-right-section .btn-link:active, .user-right-section .btn-link:focus{
+    text-decoration: underline;
+}
+#student_docs_details_modal .modal-body > div{
+    display: none;
+}
+.nir{
+    border-radius: 0.375rem !important;
+}
+body{
+    padding-top: 4.5rem;
+}
+#search_results{
+    position: absolute;
+    top: 50px;
+    z-index: 2;
+}
+#search_results a > div{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+#main_search, #search_results{
+    width: calc(100vw - 600px) !important;
+}
+input[type="search"]::-webkit-search-cancel-button{
+    background-color: var(--bs-body-color);
+    -webkit-mask: url("/placement_cell/img/cross_sign.svg") no-repeat 50% 50%;
+    mask: url("/placement_cell/img/cross_sign.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+@media screen and (max-width:992px){
+    #main_search,#search_results{
+        width: 100% !important;
+    }
+}
+.user-left-section img{
+    display: block;
+    margin: auto;
 }

@@ -2,7 +2,13 @@
 session_start();
     if($_SERVER['REQUEST_METHOD']==="POST" && isset($_SESSION['user_id'])){
         require "_db_student.php";
-        $resume_doc_name=mysqli_fetch_assoc(mysqli_query($conn_stu,"SELECT * FROM `student` WHERE `user_id`='{$_SESSION['user_id']}'"))['resume_doc_name'];
+        $user_details=mysqli_fetch_assoc(mysqli_query($conn_stu,"SELECT * FROM `student` WHERE `user_id`='{$_SESSION['user_id']}'"));
+        if($user_details['banned']){
+            require "_logOut.php";
+            echo "banned";
+            exit(0);
+        }
+        $resume_doc_name=$user_details['resume_doc_name'];
         if($resume_doc_name!=''){
         $data = array(
             "doc_name"=>$resume_doc_name,

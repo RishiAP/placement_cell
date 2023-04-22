@@ -59,12 +59,17 @@ $(document).ready(function(){
 					data:{image_data:base64data},
 					success:function(data)
 					{
+						if(data==="banned"){
+							window.location.href="/placement_cell/student_login.php";
+						}
+						else{
 						$modal.modal('hide');
 						$('#user_profile_photo').attr('src', data);
 						document.getElementById('menuProfileImage').src=data;
 						document.getElementById('profileImageAlterChoiceModalCloseBtn').click();
 						document.getElementById('askRemoveProfilePhotoBtn').style.display="block";
 						document.getElementById('changeProfilePhotoBtn').innerText="Change Photo";
+						}
 					}
 				});
 			};

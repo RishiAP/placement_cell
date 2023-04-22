@@ -1,4 +1,5 @@
 passMatched=false;
+window.company_logo_loaded=false;
 function warn_usn_exist() {
     document.getElementById('username').classList.remove('is-valid');
     document.getElementById('username').classList.add('is-invalid');
@@ -18,53 +19,40 @@ function email_dosent_exist() {
 document.getElementById('register-btn').addEventListener('click',function (){
     check_usn();
     check_email();
-    if(document.querySelector('.is-invalid')!=null){
-    document.querySelector('.is-invalid').parentNode.querySelector('.myInputTag').style.color="";
-    document.querySelector('.is-invalid').classList.remove('is-invalid');
+    if(document.querySelector('#stu_register_form').querySelectorAll(':invalid').length>0){
+        document.querySelector('#stu_register_form').classList.add('was-validated');
     }
-    if(document.getElementById('username').value==""){
-        document.getElementById('username').classList.add('is-invalid');
-        document.getElementById('username').parentNode.querySelector('.myInputTag').style.color="var(--bs-danger)";
-    }
-    else if(document.getElementById('email').value==""){
-        document.getElementById('email').classList.add('is-invalid');
-        document.getElementById('email').parentNode.querySelector('.myInputTag').style.color="var(--bs-danger)";
-    }
-    else if(document.getElementById('password').value==""){
-        document.getElementById('password').classList.add('is-invalid');
-        document.getElementById('password').parentNode.querySelector('.myInputTag').style.color="var(--bs-danger)";
-    }
-    else if(document.getElementById('cnf_password').value==""){
-        document.getElementById('cnf_password').classList.add('is-invalid');
-        document.getElementById('cnf_password').parentNode.querySelector('.myInputTag').style.color="var(--bs-danger)";
-    }
-    else if(passMatched && !window.check_usn_return && !window.check_email_return){
+    else if(passMatched && !window.check_usn_return && !window.check_email_return || window.company_logo_loaded){
         const xhr=new XMLHttpRequest();
-  //Object the object
-  // xhr.open('GET','rishi.txt',true);
-  xhr.open('POST','/placement_cell/partials/_register_company.php',true);
-  //What to do on progress(optional)
-  xhr.onprogress=function(){
-  }
-  //What to do when response is ready
-  xhr.setRequestHeader("Content-type", "application/json");
-  xhr.onload=function(){
-    if(this.responseText==true){
-        document.getElementById('stu_register_form').reset();
-        document.getElementById('page_main_message').innerHTML=`<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Success!</strong>Your account has been created successfully. <a href="/placement_cell/login/company_login.php">Click here</a> to login.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>`;
-    }
-  }
-  params=`{"username":"`+document.getElementById('username').value+`","password":"`+document.getElementById('password').value+`","cnf_pass":"`+document.getElementById('cnf_password').value+`","email":"`+document.getElementById('email').value+`"}`;
-  xhr.send(params);
+        //Object the object
+        // xhr.open('GET','rishi.txt',true);
+        xhr.open('POST','/placement_cell/partials/_register_company.php',true);
+        //What to do on progress(optional)
+        xhr.onprogress=function(){
+        }
+        //What to do when response is ready
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.onload=function(){
+            if(this.responseText==true){
+                document.getElementById('stu_register_form').reset();
+                document.getElementById('page_main_message').innerHTML=`<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong>Your account has been created successfully. <a href="/placement_cell/login/company_login.php">Click here</a> to login.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>`;
+            }
+        }
+        params=`{"username":"`+document.getElementById('username').value+`","password":"`+document.getElementById('password').value+`","cnf_pass":"`+document.getElementById('cnf_password').value+`","email":"`+document.getElementById('email').value+`","company_url":"`+document.getElementById('c_url').value+`","c_logo_url":"`+document.getElementById('logo_url').value+`"}`;
+        xhr.send(params);
     }
     else if(window.check_email_return==true){
         warn_email_exist();
     }
     else if(window.check_usn_return==true){
         warn_usn_exist();
+    }
+    if(!window.company_logo_loaded){
+        document.getElementById('c_logo').parentNode.style.borderColor="var(--bs-danger)";
+        document.getElementById('c_logo').parentNode.style.boxShadow="0 0 0 1px var(--bs-danger)";
     }
 });
 function check_valid(){
@@ -196,3 +184,23 @@ document.getElementById('stu_register_form').addEventListener('keydown',function
         document.getElementById('register-btn').click();
     }
 })
+document.getElementById('c_url').addEventListener('change',function () {
+    this.parentNode.querySelector('img').src=this.value+"/favicon.ico";
+})
+document.getElementById('logo_url').addEventListener('change',function () {
+    document.getElementById('c_logo').src=this.value;
+})
+document.getElementById('c_logo').addEventListener('error',()=>{
+    window.company_logo_loaded=false;
+    document.getElementById('c_logo').parentNode.style.borderColor="var(--bs-danger)";
+    document.getElementById('c_logo').parentNode.style.boxShadow="0 0 0 1px var(--bs-danger)";
+})
+document.getElementById('c_logo').addEventListener('load',()=>{
+    window.company_logo_loaded=true;
+    document.getElementById('c_logo').parentNode.style.borderColor="var(--bs-success)";
+    document.getElementById('c_logo').parentNode.style.boxShadow="0 0 0 1px var(--bs-success)";
+})
+window.onload=()=>{
+    document.getElementById('c_logo').parentNode.style.borderColor="black";
+    document.getElementById('c_logo').parentNode.style.boxShadow="0 0 0 1px black";
+}

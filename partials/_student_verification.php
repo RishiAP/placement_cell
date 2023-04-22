@@ -9,6 +9,10 @@
             if(mysqli_num_rows($result)==1){
                 $user_details=mysqli_fetch_assoc($result);
                 if($user_details['user_name']===$jsonArray['username'] || $user_details['user_email']===$jsonArray['username']){
+                    if($user_details['banned']){
+                        echo "banned";
+                        exit(0);
+                    }
                     if(password_verify($jsonArray['password'],$user_details['user_password'])){
                         session_start();
                         require "_logOut.php";

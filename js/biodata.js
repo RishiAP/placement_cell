@@ -1,4 +1,5 @@
 window.resumeViewTime=1;
+window.academicViewTime=1;
 all_side_nav_options=Array.from(document.querySelector('.nav-pills').querySelectorAll('a'));
 function activateSection() {
     if(!this.classList.contains('active')){
@@ -23,8 +24,10 @@ function activateSection() {
   //What to do when response is ready
   xhr2.setRequestHeader("Content-type", "application/json");
   xhr2.onload=function(){
-    console.log(this.responseText);
-      if(this.responseText!=false){
+    if(this.responseText==="banned"){
+        window.location.href="/placement_cell/login/student_login.php";
+    }
+      else if(this.responseText!=false){
         var adobeDCView = new AdobeDC.View({clientId: "396cd659cc9c484bb88047702789074f", divId: "pdf_viewer"});
         adobeDCView.previewFile(
        {
@@ -42,6 +45,43 @@ function activateSection() {
     else{
         document.getElementById('resume_delete_button').style.visibility="hidden";
         document.querySelector('main').style.overflow="";
+    }
+    if(this.getAttribute('data-option-type')==="academics"){
+        if(window.academicViewTime==1){
+            const xhr2=new XMLHttpRequest();
+  //Object the object
+  // xhr.open('GET','rishi.txt',true);
+  xhr2.open('POST','/placement_cell/partials/_get_academic_docs.php',true);
+  //What to do on progress(optional)
+  xhr2.onprogress=function(){
+  }
+  //What to do when response is ready
+  xhr2.setRequestHeader("Content-type", "application/json");
+  xhr2.onload=function(){
+    if(this.responseText==="banned"){
+        window.location.href="/placement_cell/login/student_login.php";
+    }
+     else if(this.responseText!=false){
+          $data=JSON.parse(this.responseText);
+        var adobeDCView = new AdobeDC.View({clientId: "396cd659cc9c484bb88047702789074f", divId: "high-school-marksheet-preview"});
+        adobeDCView.previewFile(
+       {
+        content:{ promise: Promise.resolve(_base64ToArrayBuffer($data.high_school_marksheet)) },
+          metaData: {fileName: "Resume.pdf"}
+       });
+       document.getElementById('high-school-marksheet-preview').style.display="block";
+        var adobeDCView = new AdobeDC.View({clientId: "396cd659cc9c484bb88047702789074f", divId: "intermediate-marksheet-preview"});
+        adobeDCView.previewFile(
+       {
+        content:{ promise: Promise.resolve(_base64ToArrayBuffer($data.intermediate_marksheet)) },
+          metaData: {fileName: "Resume.pdf"}
+       });
+       document.getElementById('intermediate-marksheet-preview').style.display="block";
+      }
+  }
+      xhr2.send();
+      window.academicViewTime++;
+        }
     }
 }
 all_side_nav_options.forEach(option => {
@@ -81,14 +121,11 @@ document.getElementById('resume_doc_btn').addEventListener('click',()=> {
   //What to do when response is ready
   xhr2.setRequestHeader("Content-type", "application/json");
   xhr2.onload=function(){
-    console.log(this.responseText);
-    if(this.responseText==true){
-        alert=document.createElement('div');
-        alert.setAttribute('class','alert text-center alert-success alert-dismissible fade show');
-        alert.setAttribute('role','alert');
-        alert.innerHTML=`<strong>Success !</strong> Resume has been uploaded successfully.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`;
-        document.getElementById('resume').insertBefore(alert,document.getElementById('resume').firstChild);
+      if(this.responseText==="banned"){
+        window.location.href="/placement_cell/login/student_login.php";
+      }
+      else if(this.responseText==true){
+          document.getElementById("resume_message").innerHTML=`<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Success!</strong> Your resume is uploaded successfully.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
         document.getElementById('resume_delete_button').style.display="block";
         if(document.getElementById('pdf_viewer').innerHTML==''){
             var adobeDCView = new AdobeDC.View({clientId: "396cd659cc9c484bb88047702789074f", divId: "pdf_viewer"});
@@ -100,12 +137,7 @@ document.getElementById('resume_doc_btn').addEventListener('click',()=> {
         }
     }
     else{
-        alert=document.createElement('div');
-        alert.setAttribute('class','alert text-center alert-danger alert-dismissible fade show');
-        alert.setAttribute('role','alert');
-        alert.innerHTML=`<strong>Something went wrong !</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`;
-        document.getElementById('resume').insertBefore(alert,document.getElementById('resume').firstChild);
+        document.getElementById("resume_message").innerHTML=`<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Oops!</strong> Something went wrong.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
     }
   }
   params2=`{"doc_data":"`+window.resume_data+`"}`;
@@ -233,16 +265,17 @@ document.getElementById('biodata-update-btn').addEventListener('click',function 
   //What to do when response is ready
   xhr2.setRequestHeader("Content-type", "application/json");
   xhr2.onload=function(){
-      if(this.responseText==true){
-        alert=document.createElement('div');
-        alert.setAttribute('class','alert alert-success alert-dismissible fade show text-center');
-        alert.setAttribute('role','alert');
-        alert.innerHTML=`<strong>Success!</strong> Biodata Updated Successfully
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`;
-        document.getElementById('biodata').insertBefore(alert,document.getElementById('biodata').querySelector('form'));
+    if(this.responseText==="banned"){
+        window.location.href="/placement_cell/login/student_login.php";
+    }
+     else if(this.responseText==true){
+        document.getElementById("biodata_message").innerHTML=`<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Success!</strong> Biodata updated successfully.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+    }
+    else{
+        document.getElementById("biodata_message").innerHTML=`<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Oops!</strong>Something went wrong.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
       }
   }
-  params2=`{"f_name":"`+document.getElementById('first_name').value+`","l_name":"`+document.getElementById('last_name').value+`","c_email":"`+document.getElementById('contact_email').value+`","phone_no":"`+document.getElementById('phone_no').value+`","DOB":"`+document.getElementById('DOB').value+`","gender":"`+document.getElementById('gender').value+`","address":"`+document.getElementById('address').value+`","state":"`+document.getElementById('state').value+`","district":"`+document.getElementById('district').value+`","city":"`+document.getElementById('city').value+`","pin_code":`+document.getElementById('PIN_Code').value+`,"aadhar_no":`+document.getElementById('aadhar_no').value+`}`;
+  params2=`{"f_name":"`+document.getElementById('first_name').value+`","l_name":"`+document.getElementById('last_name').value+`","c_email":"`+document.getElementById('contact_email').value+`","phone_no":"`+document.getElementById('phone_no').value+`","DOB":"`+document.getElementById('DOB').value+`","gender":"`+document.getElementById('gender').value+`","graduation_institute":"`+document.getElementById('graduation_institute').value+`","graduation_status":"`+document.getElementById('graduation_status').value+`","address":"`+document.getElementById('address').value+`","state":"`+document.getElementById('state').value+`","district":"`+document.getElementById('district').value+`","city":"`+document.getElementById('city').value+`","pin_code":`+document.getElementById('PIN_Code').value+`,"aadhar_no":`+document.getElementById('aadhar_no').value+`}`;
       xhr2.send(params2);
     }
 })
@@ -333,16 +366,12 @@ document.getElementById('academics-upload-btn').addEventListener('click',functio
         if(element.innerText==""){
             element.classList.add('is-invalid');
             counter++;
-            console.log(true);
+            document.getElementById("academics").classList.add("was-validated");
         }
     });
-    if(document.getElementById('intermediate-marksheet').files.length==0){
-        document.getElementById('intermediate-marksheet').classList.add('is-invalid');
+    if(document.getElementById('academics').querySelectorAll(":invalid").length>0){
         counter++;
-    }
-    if(document.getElementById('high-school-marksheet').files.length==0){
-        document.getElementById('high-school-marksheet').classList.add('is-invalid');
-        counter++;
+        document.getElementById("academics").classList.add("was-validated");
     }
     if(counter==0){
         const xhr2=new XMLHttpRequest();
@@ -355,9 +384,17 @@ document.getElementById('academics-upload-btn').addEventListener('click',functio
   //What to do when response is ready
   xhr2.setRequestHeader("Content-type", "application/json");
   xhr2.onload=function(){
-      console.log(this.responseText);
+    if(this.responseText==="banned"){
+        window.location.href="/placement_cell/login/student_login.php";
+    }
+     else if(this.responseText==true){
+        document.getElementById("academics_message").innerHTML=`<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Success!</strong> Academics uploaded successfully.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+    }
+    else{
+          document.getElementById("academics_message").innerHTML=`<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Oops!</strong> Something went wrong.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+      }
   }
-  params2=`{"high_school_marksheet":"`+window.high_school_marksheet+`","intermediate_marksheet":"`+window.intermediate_marksheet+`","high_school_performance":`+get_marks('high-school')+`,"intermediate_performance":`+get_marks('intermediate')+`}`;
+  params2=`{"high_school_marksheet":"`+window.high_school_marksheet+`","intermediate_marksheet":"`+window.intermediate_marksheet+`","high_school_performance":`+get_marks('high-school')+`,"intermediate_performance":`+get_marks('intermediate')+`,"high_school_board":"`+document.getElementById('high_school_board').value+`","high_school_name":"`+document.getElementById('high_school_name').value+`","intermediate_board":"`+document.getElementById('intermediate_board').value+`","intermediate_institute":"`+document.getElementById('intermediate_institute').value+`"}`;
       xhr2.send(params2);
     }
 })
@@ -372,9 +409,12 @@ document.getElementById('resume_delete_button').addEventListener('click',functio
   //What to do when response is ready
   xhr2.setRequestHeader("Content-type", "application/json");
   xhr2.onload=function(){
-    if(this.responseText){
+    if(this.responseText==true){
       document.getElementById('pdf_viewer').innerHTML=``;
       document.getElementById('resume_delete_button').style.display="none";
+    }
+    else if(this.responseText==="banned"){
+        window.location.href="/placement_cell/login/student_login.php";
     }
   }
       xhr2.send();

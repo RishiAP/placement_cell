@@ -10,6 +10,7 @@
                 if($company_details['company_name']===$jsonArray['username'] || $company_details['company_email']===$jsonArray['username']){
                     if(password_verify($jsonArray['password'],$company_details['company_password'])){
                         session_start();
+                        require "_logOut.php";
                         $_SESSION['company_name']=$company_details['company_name'];
                         $_SESSION['company_id']=$company_details['company_id'];
                         $_SESSION['company_email']=$company_details['company_email'];

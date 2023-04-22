@@ -1,0 +1,934 @@
+{
+    "state_boards": {
+        "Andaman & Nicobar Islands": {
+            "10th": [
+                "CBSE",
+                "C.B.S.E.",
+                "C.B.S.E Board",
+                "CBSE Board",
+                "AISSE",
+                "All India Secondary School Examination",
+                "Central Board of Secondary Education",
+                "Central Board of Secondary Education, Delhi"
+            ],
+            "12th": [
+                "CBSE",
+                "C.B.S.E.",
+                "C.B.S.E Board",
+                "CBSE Board",
+                "AISSCE",
+                "All India Senior School Certificate Examination",
+                "Central Board of Secondary Education",
+                "Central Board of Secondary Education, Delhi"
+            ]
+        },
+        "Andhra Pradesh": {
+            "10th": [
+                "BSEAP",
+                "B.S.E.A.P.",
+                "BSE",
+                "BSEAP Board",
+                "AP Board",
+                "Andhra Pradesh Board",
+                "AP SSC Board",
+                "Andhra Pradesh Board",
+                "Andhra Pradesh Board of Secondary Education"
+            ],
+            "12th": [
+                "BIEAP",
+                "B.I.E.A.P.",
+                "BIE",
+                "BIEAP Board",
+                "AP Board",
+                "Andhra Pradesh Board",
+                "AP HSC Board",
+                "Andhra Pradesh Board of Intermediate Education"
+            ]
+        },
+        "Arunachal Pradesh": {
+            "10th": [
+                "DSEAP",
+                "APDHTE",
+                "APDHTE Board",
+                "D.S.E.A.P.",
+                "A.P.D.H.T.E.",
+                "Arunachal Pradesh Board",
+                "Arunachal Pradesh Board of Secondary Education and Higher Secondary Education"
+            ],
+            "12th": [
+                "DSEAP",
+                "APDHTE",
+                "APDHTE Board",
+                "D.S.E.A.P.",
+                "A.P.D.H.T.E.",
+                "Arunachal Pradesh Board",
+                "Arunachal Pradesh Board of Secondary Education and Higher Secondary Education"
+            ]
+        },
+        "Assam": {
+            "10th": [
+                "SEBA",
+                "S.E.B.A.",
+                "SEBA Board",
+                "Board of Secondary Education, Assam",
+                "Assam Board"
+            ],
+            "12th": [
+                "AHSEC",
+                "A.H.S.E.C.",
+                "AHSEC Board",
+                "Assam Higher Secondary Education Council",
+                "Assam Board"
+            ]
+        },
+        "Bihar": {
+            "10th": [
+                "BSEB",
+                "B.S.E.B.",
+                "BSEB Board",
+                "Bihar Board",
+                "Bihar School Examination Board"
+            ],
+            "12th": [
+                "BSEB",
+                "B.S.E.B.",
+                "BSEB Board",
+                "Bihar Board",
+                "Bihar School Examination Board"
+            ]
+        },
+        "Chandigarh": {
+            "10th": [
+                "Chandigarh Board",
+                "DE, Chandigarh, Secondary Education"
+            ],
+            "12th": [
+                "Chandigarh Board",
+                "DHE, Chandigarh"
+            ]
+        },
+        "Chhattisgarh": {
+            "10th": [
+                "CGBSE",
+                "C.G.B.S.E.",
+                "CGBSE Board",
+                "CGSB",
+                "CGSB Board",
+                "CSBR",
+                "CSBR board",
+                "Chhattisgarh Board",
+                "CG Board",
+                "Chhattisgarh Board of Secondary Education"
+            ],
+            "12th": [
+                "CGBSE",
+                "C.G.B.S.E.",
+                "CGBSE Board",
+                "CGSB",
+                "CGSB Board",
+                "CSBR",
+                "CSBR board",
+                "Chhattisgarh Board",
+                "CG Board",
+                "Chhattisgarh Board of Secondary Education"
+            ]
+        },
+        "Dadra & Nagar Haveli and Daman & Diu": {
+            "10th": [
+                "CBSE",
+                "C.B.S.E.",
+                "C.B.S.E Board",
+                "CBSE Board",
+                "AISSE",
+                "All India Secondary School Examination",
+                "Central Board of Secondary Education",
+                "Central Board of Secondary Education, Delhi"
+            ],
+            "12th": [
+                "CBSE",
+                "C.B.S.E.",
+                "C.B.S.E Board",
+                "CBSE Board",
+                "AISSCE",
+                "All India Senior School Certificate Examination",
+                "Central Board of Secondary Education",
+                "Central Board of Secondary Education, Delhi"
+            ]
+        },
+        "Delhi": {
+            "10th": [
+                "DBSE",
+                "D.B.S.E.",
+                "DBSE Board",
+                "Delhi Board",
+                "Delhi Board of Senior Secondary Education",
+                "Board of Higher Secondary Education, Delhi"
+            ],
+            "12th": [
+                "DBSE",
+                "D.B.S.E.",
+                "DBSE Board",
+                "Delhi Board",
+                "Delhi Board of Senior Secondary Education",
+                "Board of Higher Secondary Education, Delhi"
+            ]
+        },
+        "Goa": {
+            "10th": [
+                "GBSHSE",
+                "G.B.H.S.E.",
+                "GBSHSE Board",
+                "Goa Board",
+                "Goa Board Of Secondary and Higher Secondary Education"
+            ],
+            "12th": [
+                "GBSHSE",
+                "G.B.H.S.E.",
+                "GBSHSE Board",
+                "Goa Board",
+                "Goa Board Of Secondary and Higher Secondary Education"
+            ]
+        },
+        "Gujarat": {
+            "10th": [
+                "GSEB",
+                "G.S.E.B.",
+                "GSEB Board",
+                "Gujarat Board",
+                "Gujarat Secondary and Higher Secondary Education Board"
+            ],
+            "12th": [
+                "GSEB",
+                "G.S.E.B.",
+                "GSEB Board",
+                "Gujarat Board",
+                "Gujarat Secondary and Higher Secondary Education Board"
+            ]
+        },
+        "Haryana": {
+            "10th": [
+                "HBSE",
+                "H.B.S.E.",
+                "BSEH",
+                "HBSE Board",
+                "Haryana Board",
+                "Haryana Board of School Education",
+                "Board of School Education Haryana"
+            ],
+            "12th": [
+                "HBSE",
+                "H.B.S.E.",
+                "BSEH",
+                "HBSE Board",
+                "Haryana Board",
+                "Haryana Board of School Education",
+                "Board of School Education Haryana"
+            ]
+        },
+        "Himachal Pradesh": {
+            "10th": [
+                "HPBOSE",
+                "H.P.B.O.S.E.",
+                "HPBOSE Board",
+                "Himachal Pradesh Board",
+                "Himachal Board",
+                "HP Board",
+                "Himachal Pradesh Board of Secondary Education"
+            ],
+            "12th": [
+                "HPBOSE",
+                "H.P.B.O.S.E.",
+                "HPBOSE Board",
+                "Himachal Pradesh Board",
+                "Himachal Board",
+                "HP Board",
+                "Himachal Pradesh Board of Secondary Education"
+            ]
+        },
+        "Jammu & Kashmir": {
+            "10th": [
+                "JKBOSE",
+                "JK BOSE",
+                "J.K.B.O.S.E.",
+                "JKBOSE Board",
+                "J&K Board",
+                "JK Board",
+                "Jammu & Kashmir Board",
+                "Jammu and Kashmir Board of School Education"
+            ],
+            "12th": [
+                "JKBOSE",
+                "JK BOSE",
+                "J.K.B.O.S.E.",
+                "JKBOSE Board",
+                "J&K Board",
+                "JK Board",
+                "Jammu & Kashmir Board",
+                "Jammu and Kashmir Board of School Education"
+            ]
+        },
+        "Jharkhand": {
+            "10th": [
+                "JAC",
+                "J.A.C.",
+                "JAC Board",
+                "JH Board",
+                "Jharkhand Board",
+                "Jharkhand Academic Council"
+            ],
+            "12th": [
+                "JAC",
+                "J.A.C.",
+                "JAC Board",
+                "JH Board",
+                "Jharkhand Board",
+                "Jharkhand Academic Council"
+            ]
+        },
+        "Karnataka": {
+            "10th": [
+                "KSEAB",
+                "KSEEB",
+                "K.S.E.A.B.",
+                "K.S.E.E.B.",
+                "KSEAB Board",
+                "Karnataka Board",
+                "Karnatka State Board",
+                "Karnataka School Examination and Assessment Board"
+            ],
+            "12th": [
+                "PUE",
+                "PU",
+                "P.U.E",
+                "P.U.",
+                "P.U.E. Board",
+                "Karnataka PUC Board",
+                "Karnataka Board",
+                "Karnatka State Board",
+                "PUE Karnataka Board of the Pre-University Education"
+            ]
+        },
+        "Kerala": {
+            "10th": [
+                "KBPE",
+                "K.B.P.E.",
+                "KBPE Board",
+                "Kerala Board",
+                "Kerala State Board",
+                "Kerala SSLC Board",
+                "Kerala Board of Public Examinations"
+            ],
+            "12th": [
+                "DHSE",
+                "D.H.S.E.",
+                "DHSE Board",
+                "Kerala Board",
+                "Kerala State Board",
+                "Kerala Higher Secondary Board",
+                "Kerala Higher Secondary Examination Board"
+            ]
+        },
+        "Ladakh": {
+            "10th": [
+                "Ladakh Board",
+                "Ladakh Board of School Education"
+            ],
+            "12th": [
+                "Ladakh Board",
+                "Ladakh Board of School Education"
+            ]
+        },
+        "Lakshadweep": {
+            "10th": [
+                "CBSE",
+                "C.B.S.E.",
+                "C.B.S.E Board",
+                "CBSE Board",
+                "AISSE",
+                "All India Secondary School Examination",
+                "Central Board of Secondary Education",
+                "Central Board of Secondary Education, Delhi"
+            ],
+            "12th": [
+                "CBSE",
+                "C.B.S.E.",
+                "C.B.S.E Board",
+                "CBSE Board",
+                "AISSCE",
+                "All India Senior School Certificate Examination",
+                "Central Board of Secondary Education",
+                "Central Board of Secondary Education, Delhi"
+            ]
+        },
+        "Madhya Pradesh": {
+            "10th": [
+                "MPBSE",
+                "M.P.B.S.E.",
+                "MPBSE Board",
+                "M.P.B.S.E. Board",
+                "MP Board",
+                "Madhya Pradesh Board",
+                "Board of Secondary Education, Madhya Pradesh",
+                "M.P. Board of Secondary Education"
+            ],
+            "12th": [
+                "MPBSE",
+                "M.P.B.S.E.",
+                "MPBSE Board",
+                "M.P.B.S.E. Board",
+                "MP Board",
+                "Madhya Pradesh Board",
+                "Board of Secondary Education, Madhya Pradesh",
+                "M.P. Board of Secondary Education"
+            ]
+        },
+        "Maharashtra": {
+            "10th": [
+                "MSBHSE",
+                "MSBSHSE",
+                "M.S.B.H.S.E",
+                "MH State Board",
+                "Maharashtra State Board",
+                "Maharashtra Board",
+                "Maharashtra SSC Board",
+                "Maharashtra State Board Of Secondary & Higher Secondary Education"
+            ],
+            "12th": [
+                "MSBHSE",
+                "MSBSHSE",
+                "M.S.B.H.S.E",
+                "MH State Board",
+                "Maharashtra State Board",
+                "Maharashtra Board",
+                "Maharashtra HSC Board",
+                "Maharashtra State Board Of Secondary & Higher Secondary Education"
+            ]
+        },
+        "Manipur": {
+            "10th": [
+                "BSEM",
+                "BOSEM",
+                "B.S.E.M.",
+                "BSEM Board",
+                "Manipur Board",
+                "Board of Secondary Education, Manipur"
+            ],
+            "12th": [
+                "COHSEM",
+                "C.O.H.S.E.M.",
+                "COHSEM Board",
+                "Manipur Board",
+                "Council of Higher Secondary Education, Manipur"
+            ]
+        },
+        "Meghalaya": {
+            "10th": [
+                "MBOSE",
+                "M.B.O.S.E.",
+                "MBOSE Board",
+                "Meghalaya Board",
+                "Meghalaya Board of School Education"
+            ],
+            "12th": [
+                "MBOSE",
+                "M.B.O.S.E.",
+                "MBOSE Board",
+                "Meghalaya Board",
+                "Meghalaya Board of School Education"
+            ]
+        },
+        "Mizoram": {
+            "10th": [
+                "MBSE",
+                "M.B.S.E. Board",
+                "Mizoram Board",
+                "Mizoram Board of Secondary Education"
+            ],
+            "12th": [
+                "MBSE",
+                "MBSE Board",
+                "Mizoram Board",
+                "Mizoram Board of Secondary Education"
+            ]
+        },
+        "Nagaland": {
+            "10th": [
+                "NBSE",
+                "N.B.S.E.",
+                "NBSE Board",
+                "Nagaland Board",
+                "Nagaland Board of Secondary Education"
+            ],
+            "12th": [
+                "NBSE",
+                "NBSE",
+                "N.B.S.E Board",
+                "Nagaland Board",
+                "Nagaland Board of Secondary Education"
+            ]
+        },
+        "Odisha": {
+            "10th": [
+                "BSE",
+                "BSEO",
+                "B.S.E",
+                "BSE Board",
+                "Odisha Board",
+                "Odisha BSE Board",
+                "Board of Secondary Education, Odisha"
+            ],
+            "12th": [
+                "CHSE",
+                "CHSEO",
+                "C.H.S.E.",
+                "CHSE Board",
+                "Odisha Board",
+                "Odisha CHSE Board",
+                "Council of Higher Secondary Education, Odisha"
+            ]
+        },
+        "Puducherry": {
+            "10th": [
+                "Puducherry Board"
+            ],
+            "12th": [
+                "Puducherry Board"
+            ]
+        },
+        "Punjab": {
+            "10th": [
+                "PSEB",
+                "P.S.E.B.",
+                "PSEB Board",
+                "Punjab Board",
+                "Punjab School Education Board"
+            ],
+            "12th": [
+                "PSEB",
+                "P.S.E.B.",
+                "PSEB Board",
+                "Punjab Board",
+                "Punjab School Education Board"
+            ]
+        },
+        "Rajasthan": {
+            "10th": [
+                "RBSE",
+                "BSER",
+                "R.B.S.E.",
+                "RBSE Board",
+                "Rajasthan Board",
+                "Rajasthan State Board",
+                "Rajasthan Board of Secondary Education",
+                "Board of Secondary Education, Rajasthan"
+            ],
+            "12th": [
+                "RBSE",
+                "BSER",
+                "R.B.S.E.",
+                "R.B.S.E. Board",
+                "Rajasthan Board",
+                "Rajasthan State Board",
+                "Rajasthan Board of Secondary Education",
+                "Board of Secondary Education, Rajasthan"
+            ]
+        },
+        "Sikkim": {
+            "10th": [
+                "SBSE",
+                "S.B.S.E.",
+                "SBSE BoardSikkim Board",
+                "Board of Higher Secondary Education, Sikkim State"
+            ],
+            "12th": [
+                "SBSE",
+                "S.B.S.E. Board",
+                "Sikkim Board",
+                "Sikkim Intermediate Board",
+                "Board of Secondary School Education, Sikkim State"
+            ]
+        },
+        "Tamilnadu": {
+            "10th": [
+                "TNSB",
+                "TN",
+                "TNBSE",
+                "T.N.B.S.E",
+                "T.N.S.B.",
+                "T.N.",
+                "TN Board",
+                "Tamil Nadu SSLC Board",
+                "Tamil Nadu State Board",
+                "TN SSLC Board",
+                "Tamil Nadu Board of Secondary Education"
+            ],
+            "12th": [
+                "TNSB",
+                "TN",
+                "TNBHSE",
+                "T.N.B.H.S.E",
+                "T.N.S.B.",
+                "T.N.",
+                "TN Board",
+                "Tamil Nadu HSC Board",
+                "Tamil Nadu State Board",
+                "TN HSC Board",
+                "Tamil Nadu Board of Higher Secondary Education"
+            ]
+        },
+        "Telangana": {
+            "10th": [
+                "BSET",
+                "B.S.E.T.",
+                "BSET Board",
+                "Telangana Board",
+                "Telangana State Board",
+                "Board of Secondary Education, Telangana"
+            ],
+            "12th": [
+                "TSBIE",
+                "T.S.B.I.E. Board",
+                "TSBIE Board",
+                "Telangana Board",
+                "TS Intermediate Board",
+                "Telangana State Board",
+                "Telangana State Board of Intermediate Education"
+            ]
+        },
+        "Tripura": {
+            "10th": [
+                "TBSE",
+                "T.B.S.E. Board",
+                "Tripura State Board",
+                "Tripura Board",
+                "Tripura Board of Secondary Education"
+            ],
+            "12th": [
+                "TBSE",
+                "T.B.S.E.",
+                "TBSE Board",
+                "Tripura State Board",
+                "Tripura Board",
+                "Tripura Board of Secondary Education"
+            ]
+        },
+        "Uttarakhand": {
+            "10th": [
+                "UBSE",
+                "U.B.S.E.",
+                "UBSE Board",
+                "Uttarakhand Board",
+                "UK Board",
+                "UK State Board",
+                "Uttarakhand Board of Secondary Education"
+            ],
+            "12th": [
+                "UBSE",
+                "U.B.S.E.",
+                "UBSE Board",
+                "Uttarakhand Board",
+                "UK Board",
+                "UK State Board",
+                "Uttarakhand Board of Secondary Education"
+            ]
+        },
+        "Uttar Pradesh": {
+            "10th": [
+                "UPMSP",
+                "U.P.M.S.P.",
+                "BHSIEUP",
+                "UP Board",
+                "Uttar Pradesh State Board",
+                "Uttar Pradesh Board",
+                "Uttar Pradesh Madhyamik Shiksha Parishad",
+                "Uttar Pradesh State Board of High School and Intermediate Education"
+            ],
+            "12th": [
+                "UPMSP",
+                "UPMSP Board",
+                "BHSIEUP",
+                "UP Board",
+                "Uttar Pradesh State Board",
+                "Uttar Pradesh Board",
+                "Uttar Pradesh Madhyamik Shiksha Parishad",
+                "Uttar Pradesh State Board of High School and Intermediate Education"
+            ]
+        },
+        "West Bengal": {
+            "10th": [
+                "WBBSE",
+                "W.B.B.S.E. Board",
+                "WBBSE Board",
+                "WB Board",
+                "WB State Board",
+                "West Bengal Board",
+                "West Bengal Board Of Secondary Education"
+            ],
+            "12th": [
+                "WBCHSE",
+                "W.B.C.H.S.E. Board",
+                "WB Board",
+                "WB State Board",
+                "West Bengal Board",
+                "West Bengal HS board",
+                "West Bengal Board Of Secondary Education"
+            ]
+        }
+    },
+    "CBSE": {
+        "10th": [
+            "CBSE",
+            "C.B.S.E.",
+            "C.B.S.E Board",
+            "CBSE Board",
+            "AISSE",
+            "All India Secondary School Examination",
+            "Central Board of Secondary Education",
+            "Central Board of Secondary Education, Delhi"
+        ],
+        "12th": [
+            "CBSE",
+            "C.B.S.E.",
+            "C.B.S.E Board",
+            "CBSE Board",
+            "AISSCE",
+            "All India Senior School Certificate Examination",
+            "Central Board of Secondary Education",
+            "Central Board of Secondary Education, Delhi"
+        ]
+    },
+    "ICSE": {
+        "10th": [
+            "ICSE",
+            "I.C.S.E.",
+            "ICSE Board",
+            "I.C.S.E. Board",
+            "Indian Certificate of Secondary Education",
+            "CISCE",
+            "CISCE Board",
+            "C.I.S.C.E. board",
+            "Council for the Indian School Certificate Examination"
+        ],
+        "12th": [
+            "ISC",
+            "I.S.C",
+            "ISC Board",
+            "I.S.C. Board",
+            "Indian School Certificate",
+            "CISCE",
+            "CISCE Board",
+            "C.I.S.C.E Board",
+            "Council for the Indian School Certificate Examination"
+        ]
+    },
+    "madarasa_boards": {
+        "Assam": {
+            "10th": [
+                "SMEBA",
+                "S.M.E.B.A. Board",
+                "State Madrassa Education Board Assam"
+            ],
+            "12th": [
+                "SMEBA",
+                "S.M.E.B.A. Board",
+                "State Madrassa Education Board Assam"
+            ]
+        },
+        "Bihar": {
+            "10th": [
+                "BSMEB",
+                "B.S.M.E.B. Board",
+                "Bihar State Madrasa Education Board"
+            ],
+            "12th": [
+                "BSMEB",
+                "B.S.M.E.B. Board",
+                "Bihar State Madrasa Education Board"
+            ]
+        },
+        "Chhattisgarh": {
+            "10th": [
+                "CGMB",
+                "C.G.M.B.",
+                "CGMB Board",
+                "Chhattisgarh Madarsa Board, Raipur"
+            ],
+            "12th": [
+                "CGMB",
+                "C.G.M.B.",
+                "CGMB Board",
+                "Chhattisgarh Madarsa Board, Raipur"
+            ]
+        },
+        "Uttarakhand": {
+            "10th": [
+                "MSDP",
+                "M.S.D.P.",
+                "MSDP Board",
+                "Uttarakhand Madarsa Education Board Dehradun"
+            ],
+            "12th": [
+                "MSDP",
+                "M.S.D.P.",
+                "MSDP Board",
+                "Uttarakhand Madarsa Education Board Dehradun"
+            ]
+        },
+        "West Bengal": {
+            "10th": [
+                "WBBME",
+                "W.B.B.M.E.",
+                "WBBME Board",
+                "West Bengal Board Of Madrasah Education"
+            ],
+            "12th": [
+                "WBBME",
+                "W.B.B.M.E.",
+                "WBBME Board",
+                "West Bengal Board Of Madrasah Education"
+            ]
+        }
+    },
+    "open_school_boards": {
+        "Andhra Pradesh": {
+            "10th": [
+                "APOSS",
+                "A.P.O.S.S.",
+                "APPOSS Board",
+                "Andhra Pradesh Open School Society"
+            ],
+            "12th": [
+                "APOSS",
+                "A.P.O.S.S.",
+                "APPOSS Board",
+                "Andhra Pradesh Open School Society"
+            ]
+        },
+        "Bihar": {
+            "10th": [
+                "BBOSE",
+                "B.B.O.S.E",
+                "BBOSE Board",
+                "Bihar Board Of Open Schooling & Examination"
+            ],
+            "12th": [
+                "BBOSE",
+                "B.B.O.S.E",
+                "BBOSE Board",
+                "Bihar Board Of Open Schooling & Examination"
+            ]
+        },
+        "Chhattishgarh": {
+            "10th": [
+                "CGSOS",
+                "C.G.S.O.S",
+                "CGSOS Board",
+                "Chhattishgarh Board Of Open School Raipur"
+            ],
+            "12th": [
+                "CGSOS",
+                "C.G.S.O.S",
+                "CGSOS Board",
+                "Chhattishgarh Board Of Open School Raipur"
+            ]
+        },
+        "Delhi": {
+            "10th": [
+                "DSOS",
+                "D.S.O.S",
+                "DSOS Board",
+                "Delhi State Open School, Delhi"
+            ],
+            "12th": [
+                "DSOS",
+                "D.S.O.S",
+                "DSOS Board",
+                "Delhi State Open School, Delhi"
+            ]
+        },
+        "Jammu & Kashmir": {
+            "10th": [
+                "JKSOS",
+                "J.K.S.O.S.",
+                "JKSOS Board",
+                "Jammu and Kashmir State Open School\u00a0"
+            ],
+            "12th": [
+                "JKSOS",
+                "J.K.S.O.S.",
+                "JKSOS Board",
+                "Jammu and Kashmir State Open School\u00a0"
+            ]
+        },
+        "Madhya Pradesh": {
+            "10th": [
+                "MKSOS",
+                "M.K.S.O.S.",
+                "MKSOS Board",
+                "Madhya Pradesh State Open School Education Board, Bhopal"
+            ],
+            "12th": [
+                "MKSOS",
+                "M.K.S.O.S.",
+                "MKSOS Board",
+                "Madhya Pradesh State Open School Education Board, Bhopal"
+            ]
+        },
+        "Uttarakhand": {
+            "10th": [
+                "NIOS",
+                "N.I.O.S.",
+                "NIOS Board",
+                "National Institute of Open Schooling, Uttarakhand"
+            ],
+            "12th": [
+                "NIOS",
+                "N.I.O.S.",
+                "NIOS Board",
+                "National Institute of Open Schooling, Uttarakhand"
+            ]
+        },
+        "Rajasthan": {
+            "10th": [
+                "RSOS",
+                "R.S.O.S",
+                "RSOS Board",
+                "Rajasthan State Open School, Rajasthan"
+            ],
+            "12th": [
+                "RSOS",
+                "R.S.O.S",
+                "RSOS Board",
+                "Rajasthan State Open School, Rajasthan"
+            ]
+        },
+        "Telangana": {
+            "10th": [
+                "TOSS",
+                "T.O.S.S.",
+                "TOSS Board",
+                "Telangana Open School\u00a0Society"
+            ],
+            "12th": [
+                "TOSS",
+                "T.O.S.S.",
+                "TOSS Board",
+                "Telangana Open School\u00a0Society"
+            ]
+        },
+        "West Bengal": {
+            "10th": [
+                "WBCROS",
+                "W.B.C.R.O.S.",
+                "WBCROS Board",
+                "The West Bengal Council Of Rabindra Open Schooling"
+            ],
+            "12th": [
+                "WBCROS",
+                "W.B.C.R.O.S.",
+                "WBCROS Board",
+                "The West Bengal Council Of Rabindra Open Schooling"
+            ]
+        }
+    }
+}

@@ -30,19 +30,35 @@ else{
 </div>
 <div class="input-group">
         <div class="myInputTag">Company Name</div>
-        <input type="text" name="username" id="username" class="form-control plh-none mb-3" placeholder="Company Name">
+        <input type="text" name="username" id="username" class="form-control plh-none mb-3" placeholder="Company Name" required>
 </div>
-<div class="input-group">
+<div class="input-group mb-3">
         <div class="myInputTag">Email Address</div>
-        <input type="email" name="email" id="email" class="form-control plh-none mb-3" placeholder="Email Address">
+        <input type="email" name="email" id="email" class="form-control plh-none" placeholder="Email Address" required>
+    </div>
+    <div class="input-group mb-3 align-items-center">
+        <div class="myInputTag">Company website URL</div>
+        <input type="url" name="c_url" id="c_url" class="form-control plh-none" placeholder="Company website URL" required>
+        <div class="d-flex align-items-center" style="
+    position: absolute;
+    right: 0.375rem;
+    z-index: 1;
+"><img src="" alt="" id="company_favicon" style="z-index: 1;
+    max-height: 36px;
+    top: 1px;"></div>
+    </div>
+<div class="input-group">
+        <div class="myInputTag">Company Logo URL</div>
+        <input type="url" name="logo_url" id="logo_url" class="form-control plh-none mb-3" placeholder="Company Logo URL" required>
 </div>
+<div class="container mb-3 d-flex justify-content-center align-items-center"><div class="d-flex justify-content-center align-items-center" style="border:1px solid black; width:200px; height:200px; padding:1rem; box-shadow: 0 0 0 1px black"><img src="" alt="" id="c_logo" style="max-width:100%; max-height:100%;"></div></div>
 <div class="input-group">
         <div class="myInputTag">Create Password</div>
-        <input type="password" name="password" id="password" class="form-control plh-none mb-3" placeholder="Create Password">
+        <input type="password" name="password" id="password" class="form-control plh-none mb-3" placeholder="Create Password" required>
 </div>
 <div class="input-group">
         <div class="myInputTag">Confirm Password</div>
-        <input type="password" name="cnf_password" id="cnf_password" class="form-control plh-none mb-3" placeholder="Confirm Password">
+        <input type="password" name="cnf_password" id="cnf_password" class="form-control plh-none mb-3" placeholder="Confirm Password" required>
 </div>
 <div class="pass_message">
 <div class="alert alert-success" style="display:none;" role="alert">

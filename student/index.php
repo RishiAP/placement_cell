@@ -16,7 +16,9 @@ else{
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/>
         <script src="https://unpkg.com/cropperjs"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile.css">
     <style>
         .cropper-view-box , .cropper-face{
           border-radius:50% !important;
@@ -82,15 +84,15 @@ else{
 </head>
 <body>
     <?php
-      require "../partials/_nav.php";
     if(!isset($_SESSION['user_id'])){
         header("location:/placement_cell/login/student_login.php");
     }
     else{
+      require "../partials/_nav.php";
+    require "../partials/student_docs_details_modal.php";
         require "../partials/profileImageAlterChoiceModal.php";
     require "../partials/_image_cropping_modal.php";
     }
-    
     ?>
     <main class="d-flex container-fluid">
         <section class="user-left-section">
@@ -115,13 +117,34 @@ else{
                 ?>
         </section>
         <section class="user-right-section">
-            <h1 id="username"><?php echo $_SESSION['user_name'] ?></h1>
-            <h2 id="person_name"><?php echo $_SESSION['person_name'] ?></h2>
+            <h1 id="username"><?php echo $user_details_fetch['user_name']; ?></h1>
+            <h2 id="person_name"><?php echo $user_details_fetch['f_name']." ".$user_details_fetch['l_name']; ?></h2>
+                <?php
+                    echo '<p class="text-large"><i class="bi bi-mortarboard-fill"></i> Student of '.$user_details_fetch['course_name'].' at '.$user_details_fetch['graduation_institute'].'</p>
+                    <p class="d-flex flex-column">
+                    <span><i class="bi bi-geo-alt-fill text-danger"></i>'.$user_details_fetch['address'].'</span><span>'.$user_details_fetch['city'].", ".$user_details_fetch['district'].", ".$user_details_fetch['state']." - ".$user_details_fetch['pin_code'].'</span>
+                    </p>';
+                ?>
+                <section class="contact-section d-flex gap-5">
+                    <p><i class="bi bi-envelope-at"></i> <?php
+                        echo $user_details_fetch['c_email']
+                    ?></p>
+                    <p><i class="bi bi-telephone"></i>
+                    <?php
+                        echo $user_details_fetch['ph_no']
+                    ?></p>
+                </section>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#student_docs_details_modal" data-bs-type="doc_high_school">High School Marksheet</button>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-type="doc_intermediate" data-bs-target="#student_docs_details_modal">Intermediate Marksheet</button>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-type="doc_resume" data-bs-target="#student_docs_details_modal">Resume</button>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-type="academic_performance" data-bs-target="#student_docs_details_modal">Academic Performance</button>
         </section>
     </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="../js/script.js"></script>
 <script src="../js/imageCropper.js"></script>
 <script src="../js/manageProfilePhoto.js"></script>
+<script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
+<script src="../js/fetch_student_data.js"></script>
 </body>
 </html>

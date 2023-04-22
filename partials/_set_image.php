@@ -5,7 +5,13 @@
         session_start();
         if(isset($_SESSION['user_id'],$_POST['image_data'])){
             require "_db_student.php";
-            $profile_image_name=mysqli_fetch_assoc(mysqli_query($conn_stu,"SELECT * FROM `student` WHERE `user_id`='{$_SESSION['user_id']}'"))['profile_image_name'];
+            $user_details=mysqli_fetch_assoc(mysqli_query($conn_stu,"SELECT * FROM `student` WHERE `user_id`='{$_SESSION['user_id']}'"));
+            if($user_details['banned']){
+                require "_logOut.php";
+                echo "banned";
+                exit(0);
+            }
+            $profile_image_name=$user_details['profile_image_name'];
             if($profile_image_name!=""){
                 unlink("../profile_images/".$profile_image_name);
             }

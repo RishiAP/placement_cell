@@ -15,8 +15,10 @@ document.getElementById('changeProfilePhotoBtn').addEventListener('click',()=>{
     //What to do when response is ready
     xhrRPP.setRequestHeader("Content-type", "application/json");
     xhrRPP.onload=function(){
-      console.log(this.responseText);
-        if(this.responseText==true)
+      if(this.responseText==="banned"){
+        window.location.href="/placement_cell/login/student_login.php";
+      }
+       else if(this.responseText==true)
         {
             document.getElementById('profileImageRemoveChoiceModalCloseBtn').click();
             setTimeout(() => {

@@ -15,7 +15,6 @@ document.getElementById('login-btn').addEventListener('click',function (){
   //What to do when response is ready
   xhr.setRequestHeader("Content-type", "application/json");
   xhr.onload=function(){
-    console.log(this.responseText);
     if(this.responseText==true){
         window.location.href="/placement_cell/admin/";
     }

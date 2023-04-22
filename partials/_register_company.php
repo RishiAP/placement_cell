@@ -6,7 +6,7 @@
             require "_db_student.php";
             $hash=password_hash($jsonArray['password'],PASSWORD_ARGON2ID);
             $time=time();
-            $result=mysqli_query($conn_stu,"INSERT INTO `company` (`company_name`,`company_email`,`company_password`,`joined_date`) VALUES('{$jsonArray['username']}','{$jsonArray['email']}','$hash','$time')");
+            $result=mysqli_query($conn_stu,"INSERT INTO `company` (`company_name`,`company_email`,`company_password`,`company_url`, `company_logo_url`,`joined_date`) VALUES('{$jsonArray['username']}','{$jsonArray['email']}','$hash','{$jsonArray['company_url']}','{$jsonArray['c_logo_url']}','$time')");
             if($result){
                 echo true;
             }

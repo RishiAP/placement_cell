@@ -4,6 +4,13 @@
         $jsonArray = json_decode($data,true);
         session_start();
         if(isset($_SESSION['user_id'],$jsonArray['doc_data'])){
+            require "_db_student.php";
+            $user_details=mysqli_fetch_assoc(mysqli_query($conn_stu,"SELECT * FROM `student` WHERE `user_id`='{$_SESSION['user_id']}'"));
+            if($user_details['banned']){
+                require "_logOut.php";
+                echo "banned";
+                exit(0);
+            }
             $data=explode(',',$jsonArray['doc_data']);
             $ext="";
             if(stripos($data[0],"application/pdf")!==false)
@@ -13,8 +20,7 @@
             }
             $random_name=hash("sha256",time().uniqid()).".".$ext;
             file_put_contents("../resume_doc/".$random_name,file_get_contents($jsonArray['doc_data']));
-            require "_db_student.php";
-            $pre_file_name=mysqli_fetch_assoc(mysqli_query($conn_stu,"SELECT * FROM `student` WHERE `user_id`='{$_SESSION['user_id']}'"))['resume_doc_name'];
+            $pre_file_name=$user_details['resume_doc_name'];
             $unlinked=true;
             if($pre_file_name!=''){
                 $unlinked=unlink("../resume_doc/".$pre_file_name);

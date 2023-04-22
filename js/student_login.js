@@ -18,6 +18,12 @@ document.getElementById('login-btn').addEventListener('click',function (){
     if(this.responseText==true){
         window.location.href="/placement_cell/student/";
     }
+    else if(this.responseText==="banned"){
+        document.getElementById('page_main_message').innerHTML=`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Account Banned!</strong> Your account is currently banned for some reason.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`;
+    }
     else if(this.responseText==false){
         document.getElementById('password').classList.add('is-invalid');
         document.getElementById('password').parentNode.querySelector('.myInputTag').style.color="var(--bs-danger)";

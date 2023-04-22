@@ -1,0 +1,17 @@
+@media screen and (max-width:1350px){
+    main, #base-info-section{
+        flex-direction: column;
+    }
+    .contact-section{
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 0 !important;
+    }
+    .user-right-section{
+        width: 100%;
+    }
+    .user-left-section{
+        margin: auto;
+        width: 100%;
+    }
+}
