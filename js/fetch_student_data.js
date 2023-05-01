@@ -19,6 +19,10 @@ function fetch_doc() {
     else if($data_to_input==="doc_intermediate"){
         document.getElementById('student_docs_details_modalLabel').innerText='@'+document.location.href.split('/')[5]+" - Intermediate Marksheet";
     }
+    else if($data_to_input==="doc_diploma"){
+        document.getElementById('student_docs_details_modalLabel').innerText='@'+document.location.href.split('/')[5]+" - Diploma Marksheet";
+        $data_to_input="doc_intermediate"
+    }
     if(document.getElementById($data_to_input).innerHTML==``){
         const xhr2=new XMLHttpRequest();
   //Object the object

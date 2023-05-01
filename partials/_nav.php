@@ -93,7 +93,7 @@ $ext = pathinfo($user_details_fetch['profile_image_name'], PATHINFO_EXTENSION);
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-0 mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/placement_cell/">Home</a>
         </li>

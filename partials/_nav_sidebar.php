@@ -46,11 +46,11 @@ $ext = pathinfo($user_details_fetch['profile_image_name'], PATHINFO_EXTENSION);
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Offcanvas navbar</a>
+    <a class="navbar-brand" href="/placement_cell/"><img style="max-width:50px;" src="/placement_cell/img/PC_icon.png" alt=""></a>
     <button class="btn btn-danger" id="resume_delete_button" type="button" style="margin-left:auto; display:none;"><i class="bi bi-trash3"></i></button>
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Options</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body p-0">

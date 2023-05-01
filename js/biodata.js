@@ -1,6 +1,18 @@
 window.resumeViewTime=1;
 window.academicViewTime=1;
 all_side_nav_options=Array.from(document.querySelector('.nav-pills').querySelectorAll('a'));
+document.querySelector("#ten_2").addEventListener('input',function () {
+    if(this.checked){
+        document.getElementById('intermediate_board').setAttribute('required','true');
+        document.getElementById('intermediate_board').removeAttribute('disabled');
+    }
+})
+document.querySelector("#ten_3").addEventListener('input',function () {
+    if(this.checked){
+        document.getElementById('intermediate_board').setAttribute('disabled','true');
+        document.getElementById('intermediate_board').removeAttribute('required');
+    }
+})
 function activateSection() {
     if(!this.classList.contains('active')){
         active_element=this.parentNode.parentNode.querySelector('.active');
@@ -10,8 +22,8 @@ function activateSection() {
         document.querySelector('main').querySelector('#'+active_element.getAttribute('data-option-type')).style.display="none";
         document.querySelector('main').querySelector('#'+this.getAttribute('data-option-type')).style.display="";
     }
+    document.querySelector('.offcanvas').querySelector('.btn-close').click();
     if(this.getAttribute('data-option-type')==="resume"){
-        document.querySelector('main').style.overflow="hidden";
         document.getElementById('resume_delete_button').style.visibility="visible";
         if(window.resumeViewTime==1){
             const xhr2=new XMLHttpRequest();
@@ -235,7 +247,7 @@ function calc_high_marks() {
     document.getElementById('high-school-total').querySelector('th:nth-child(4)').innerText=totalMaxMarks;
     document.getElementById('percentage-high-school').value=totalMarksObtained/totalMaxMarks*100;
 }
-document.getElementById('high-school-performance').addEventListener('keyup',calc_high_marks);
+document.getElementById('high-school-performance').querySelector('table').addEventListener('keyup',calc_high_marks);
 function calc_inter_marks() {
     totalMarksObtained=0;
     totalMaxMarks=0;
@@ -248,7 +260,7 @@ function calc_inter_marks() {
     document.getElementById('intermediate-total').querySelector('th:nth-child(4)').innerText=totalMaxMarks;
     document.getElementById('percentage-intermediate').value=totalMarksObtained/totalMaxMarks*100;
 }
-document.getElementById('intermediate-performance').addEventListener('keyup',calc_inter_marks);
+document.getElementById('intermediate-performance').querySelector('table').addEventListener('keyup',calc_inter_marks);
 document.getElementById('biodata-update-btn').addEventListener('click',function () {
     all_invalids=Array.from(this.parentNode.querySelectorAll(':invalid'));
     if(all_invalids.length>0){
@@ -275,7 +287,7 @@ document.getElementById('biodata-update-btn').addEventListener('click',function 
         document.getElementById("biodata_message").innerHTML=`<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Oops!</strong>Something went wrong.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
       }
   }
-  params2=`{"f_name":"`+document.getElementById('first_name').value+`","l_name":"`+document.getElementById('last_name').value+`","c_email":"`+document.getElementById('contact_email').value+`","phone_no":"`+document.getElementById('phone_no').value+`","DOB":"`+document.getElementById('DOB').value+`","gender":"`+document.getElementById('gender').value+`","graduation_institute":"`+document.getElementById('graduation_institute').value+`","graduation_status":"`+document.getElementById('graduation_status').value+`","address":"`+document.getElementById('address').value+`","state":"`+document.getElementById('state').value+`","district":"`+document.getElementById('district').value+`","city":"`+document.getElementById('city').value+`","pin_code":`+document.getElementById('PIN_Code').value+`,"aadhar_no":`+document.getElementById('aadhar_no').value+`}`;
+  params2=`{"f_name":"`+document.getElementById('first_name').value+`","l_name":"`+document.getElementById('last_name').value+`","c_email":"`+document.getElementById('contact_email').value+`","phone_no":"`+document.getElementById('phone_no').value+`","DOB":"`+document.getElementById('DOB').value+`","gender":"`+document.getElementById('gender').value+`","graduation_institute":"`+document.getElementById('graduation_institute').value+`","course_name":"`+document.getElementById('course_name').value+`","graduation_status":"`+document.getElementById('graduation_status').value+`","address":"`+document.getElementById('address').value+`","state":"`+document.getElementById('state').value+`","district":"`+document.getElementById('district').value+`","city":"`+document.getElementById('city').value+`","pin_code":`+document.getElementById('PIN_Code').value+`,"aadhar_no":`+document.getElementById('aadhar_no').value+`}`;
       xhr2.send(params2);
     }
 })
@@ -394,7 +406,14 @@ document.getElementById('academics-upload-btn').addEventListener('click',functio
           document.getElementById("academics_message").innerHTML=`<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Oops!</strong> Something went wrong.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
       }
   }
-  params2=`{"high_school_marksheet":"`+window.high_school_marksheet+`","intermediate_marksheet":"`+window.intermediate_marksheet+`","high_school_performance":`+get_marks('high-school')+`,"intermediate_performance":`+get_marks('intermediate')+`,"high_school_board":"`+document.getElementById('high_school_board').value+`","high_school_name":"`+document.getElementById('high_school_name').value+`","intermediate_board":"`+document.getElementById('intermediate_board').value+`","intermediate_institute":"`+document.getElementById('intermediate_institute').value+`"}`;
+  if(document.querySelector("input[name=type_of_10plus]:checked").id==="ten_2"){
+    ten_plus_type="intermediate";
+}
+else{
+      ten_plus_type="diploma";
+  }
+  intermediate_board=(ten_plus_type==="intermediate")?(`"`+document.getElementById('intermediate_board').value+`"`):null;
+  params2=`{"high_school_marksheet":"`+window.high_school_marksheet+`","intermediate_marksheet":"`+window.intermediate_marksheet+`","high_school_performance":`+get_marks('high-school')+`,"intermediate_performance":`+get_marks('intermediate')+`,"high_school_board":"`+document.getElementById('high_school_board').value+`","high_school_name":"`+document.getElementById('high_school_name').value+`","intermediate_board":`+intermediate_board+`,"ten_plus_institute":"`+document.getElementById('ten_plus_institute').value+`","ten_plus_type":"`+ten_plus_type+`","study_field":"`+document.getElementById('study_field').value+`"}`;
       xhr2.send(params2);
     }
 })

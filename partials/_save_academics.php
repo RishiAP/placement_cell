@@ -33,7 +33,7 @@ session_start();
         $intermediate_marksheet_name=save_file($jsonArray['intermediate_marksheet'],'intermediate_marksheets');
         $jsonArray['high_school_performance']=json_encode($jsonArray['high_school_performance']);
         $jsonArray['intermediate_performance']=json_encode($jsonArray['intermediate_performance']);
-        $main_query=mysqli_query($conn_stu,"UPDATE `student` SET `high_school_performance`='{$jsonArray['high_school_performance']}', `intermediate_performance`='{$jsonArray['intermediate_performance']}', `high_school_marksheet_name`='$high_school_marksheet_name', `intermediate_marksheet_name`='$intermediate_marksheet_name',`high_school_board`='{$jsonArray['high_school_board']}',`intermediate_board`='{$jsonArray['intermediate_board']}',`high_school_name`='{$jsonArray['high_school_name']}',`intermediate_institute`='{$jsonArray['intermediate_institute']}' WHERE `user_id`='{$_SESSION['user_id']}'");
+        $main_query=mysqli_query($conn_stu,"UPDATE `student` SET `high_school_performance`='{$jsonArray['high_school_performance']}', `intermediate_performance`='{$jsonArray['intermediate_performance']}', `high_school_marksheet_name`='$high_school_marksheet_name', `intermediate_marksheet_name`='$intermediate_marksheet_name',`high_school_board`='{$jsonArray['high_school_board']}',`intermediate_board`='".($jsonArray['ten_plus_type']==="intermediate"?"{$jsonArray['intermediate_board']}":NULL)."',`high_school_name`='{$jsonArray['high_school_name']}',`ten_plus_type`='{$jsonArray['ten_plus_type']}',`ten_plus_institute`='{$jsonArray['ten_plus_institute']}' WHERE `user_id`='{$_SESSION['user_id']}'");
         if($main_query){
             echo true;
         }

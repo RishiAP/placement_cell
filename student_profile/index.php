@@ -100,14 +100,16 @@ else{
               }
               echo '>Banned</span>';
             ?></h1>
-            <h2 id="person_name"><?php echo $user_details_fetch['f_name']." ".$user_details_fetch['l_name']; ?></h2>
+            <h2 id="person_name"><?php if($user_details_fetch['f_name']!=""){ echo $user_details_fetch['f_name']." ".$user_details_fetch['l_name'];}?></h2>
                 <?php
+                if($user_details_fetch['f_name']!=""){
                     echo '<p class="text-large"><i class="bi bi-mortarboard-fill"></i> Student of '.$user_details_fetch['course_name'].' at '.$user_details_fetch['graduation_institute'].'</p>
                     <p class="d-flex flex-column">
                     <span><i class="bi bi-geo-alt-fill text-danger"></i>'.$user_details_fetch['address'].'</span><span>'.$user_details_fetch['city'].", ".$user_details_fetch['district'].", ".$user_details_fetch['state']." - ".$user_details_fetch['pin_code'].'</span>
                     </p>';
+                }
                 ?>
-                <section class="contact-section d-flex gap-5">
+                <section class="contact-section d-flex gap-5" style="<?php if($user_details_fetch['f_name']==""){echo 'display:none;';} ?>">
                     <p><a href="mailto:<?php echo $user_details_fetch['c_email']; ?>"><i class="bi bi-envelope-at"></i> <?php
                         echo $user_details_fetch['c_email']
                     ?></a></p>
@@ -116,10 +118,12 @@ else{
                         echo $user_details_fetch['ph_no']
                     ?></a></p>
                 </section>
-            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#student_docs_details_modal" data-bs-type="doc_high_school">High School Marksheet</button>
-            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-type="doc_intermediate" data-bs-target="#student_docs_details_modal">Intermediate Marksheet</button>
-            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-type="doc_resume" data-bs-target="#student_docs_details_modal">Resume</button>
-            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-type="academic_performance" data-bs-target="#student_docs_details_modal">Academic Performance</button>
+                <section>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#student_docs_details_modal" data-bs-type="doc_high_school" style="<?php if($user_details_fetch['high_school_marksheet_name']==""){echo 'display:none;';} ?>">High School Marksheet</button>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-type="doc_<?php echo $user_details_fetch['ten_plus_type']; ?>" data-bs-target="#student_docs_details_modal" style="<?php if($user_details_fetch['intermediate_marksheet_name']==""){echo 'display:none;';} ?>"><?php echo ucfirst($user_details_fetch['ten_plus_type']); ?> Marksheet</button>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-type="doc_resume" data-bs-target="#student_docs_details_modal" style="<?php if($user_details_fetch['resume_doc_name']==""){echo 'display:none;';} ?>">Resume</button>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-type="academic_performance" data-bs-target="#student_docs_details_modal" style="<?php if($user_details_fetch['high_school_performance']==="[]"){echo 'display:none;';} ?>">Academic Performance</button>
+              </section>
             <?php
             $approved=false;
             if(isset($_SESSION['company_id'])){
@@ -226,6 +230,7 @@ else{
         ?>
         </section>
     </main>
+<?php require "../partials/_footer.php" ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
 <script src="../js/script.js"></script>

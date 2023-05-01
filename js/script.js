@@ -3,7 +3,7 @@ function inpOnFocus(){
     if(this.parentNode.querySelector('.myInputTag')!=null){
         this.parentNode.querySelector('.myInputTag').style.display="block";
     }
-    if(!this.classList.contains('is-invalid')){
+    if(!this.classList.contains('is-invalid') && this.parentNode.querySelector('.myInputTag')!=null){
         this.parentNode.querySelector('.myInputTag').style.color="";
     }
 }
@@ -11,7 +11,7 @@ function inpOnBlur(){
     if(this.value=="" && this.parentNode.querySelector('.myInputTag')!=null){
     this.parentNode.querySelector('.myInputTag').style.display="none";
     }
-    if(!this.classList.contains('is-invalid')){
+    if(!this.classList.contains('is-invalid') && this.parentNode.querySelector('.myInputTag')!=null){
         this.parentNode.querySelector('.myInputTag').style.color="var(--bs-body-color)";
     }
 }
@@ -22,7 +22,7 @@ all_input_tags.forEach(element => {
 document.getElementById("theme_change_btn").addEventListener('click',function () {
     if(document.querySelector('html').getAttribute('data-bs-theme')==="dark"){
         document.querySelector('html').setAttribute('data-bs-theme',"light");
-        if(document.querySelector('.profile-image').src.includes("default_user_image")){
+        if(document.querySelector('.profile-image')!=null && document.querySelector('.profile-image').src.includes("default_user_image")){
             all_default_images=Array.from(document.querySelectorAll('.profile-image'));
         all_default_images.forEach(function (img){
             img.src="/placement_cell/img/default_user_image_light.svg";
@@ -31,7 +31,7 @@ document.getElementById("theme_change_btn").addEventListener('click',function ()
     }
     else{
         document.querySelector('html').setAttribute('data-bs-theme',"dark");
-        if(document.querySelector('.profile-image').src.includes("default_user_image")){
+        if(document.querySelector('.profile-image') && document.querySelector('.profile-image').src.includes("default_user_image")){
             all_default_images=Array.from(document.querySelectorAll('.profile-image'));
         all_default_images.forEach(function (img){
             img.src="/placement_cell/img/default_user_image_dark.svg";

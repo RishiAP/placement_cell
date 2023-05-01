@@ -61,14 +61,14 @@
   <p style="display:inline;" id="high_school_percentage"><?php if($total_max_marks!=0){echo $total_marks_obtained/$total_max_marks*100;
   echo " %";} ?></p>
 </section>
-<h1 class="text-center">Intermediate Performance</h1>
-<section class="container">
+<h1 class="text-center">Intermediate/Diploma Performance</h1>
+<section class="container" <?php if($user_details_fetch['ten_plus_type']==="diploma"){echo 'style="display:none;"';} ?>>
   <h6 style="display:inline;"><strong>Intermediate Board : </strong></h6>
   <p style="display:inline;" id="intermediate_board"><?php echo $user_details_fetch['intermediate_board']; ?></p>
 </section>
 <section class="container">
-  <h6 style="display:inline;"><strong>Intermediate Institute : </strong></h6>
-  <p style="display:inline;" id="intermediate_institute"><?php echo $user_details_fetch['intermediate_institute']; ?></p>
+  <h6 style="display:inline;"><strong><?php echo ucfirst($user_details_fetch['ten_plus_type']); ?> Institute : </strong></h6>
+  <p style="display:inline;" id="ten_plus_institute"><?php echo $user_details_fetch['ten_plus_institute']; ?></p>
 </section>
 <table class="container table table-bordered">
   <thead>

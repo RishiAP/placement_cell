@@ -18,7 +18,7 @@ session_start();
         ['graduation_status']==="final_year") {
             $jsonArray['graduation_status']="FINAL_YEAR";
         }
-        if(mysqli_query($conn_stu,"UPDATE `student` SET `f_name`='{$jsonArray['f_name']}', `l_name`='{$jsonArray['l_name']}',`c_email`='{$jsonArray['c_email']}',`ph_no`='{$jsonArray['phone_no']}',`DOB`='{$jsonArray['DOB']}',`gender`='{$jsonArray['gender']}',`graduation_institute`='{$jsonArray['graduation_institute']}',`graduation_status`='{$jsonArray['graduation_status']}',`address`='{$jsonArray['address']}',`state`='{$jsonArray['state']}',`district`='{$jsonArray['district']}',`city`='{$jsonArray['city']}',`pin_code`='{$jsonArray['pin_code']}',`aadhar_no`='{$jsonArray['aadhar_no']}'  WHERE `user_id`='{$_SESSION['user_id']}'")){
+        if(mysqli_query($conn_stu,"UPDATE `student` SET `f_name`='{$jsonArray['f_name']}', `l_name`='{$jsonArray['l_name']}',`c_email`='{$jsonArray['c_email']}',`ph_no`='{$jsonArray['phone_no']}',`DOB`='{$jsonArray['DOB']}',`gender`='{$jsonArray['gender']}',`graduation_institute`='{$jsonArray['graduation_institute']}',`course_name`='{$jsonArray['course_name']}',`graduation_status`='{$jsonArray['graduation_status']}',`address`='{$jsonArray['address']}',`state`='{$jsonArray['state']}',`district`='{$jsonArray['district']}',`city`='{$jsonArray['city']}',`pin_code`='{$jsonArray['pin_code']}',`aadhar_no`='{$jsonArray['aadhar_no']}'  WHERE `user_id`='{$_SESSION['user_id']}'")){
             echo true;
         }
     }
