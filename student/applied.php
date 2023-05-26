@@ -10,7 +10,7 @@ else{
 } ?>">
 <head>
 <?php require "../partials/_header.php"; ?>
-    <title>Document</title>
+    <title>Applied For | Placement Cell</title>
 </head>
 <body>
     <?php

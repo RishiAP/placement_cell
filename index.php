@@ -16,7 +16,8 @@ else{
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/mobile.css">
-    <title>Document</title>
+<link rel="icon" href="/placement_cell/img/favicon.ico">
+    <title>Placement Cell | Home</title>
 </head>
 <body>
     <?php

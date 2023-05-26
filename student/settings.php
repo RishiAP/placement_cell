@@ -17,7 +17,8 @@ else{
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/mobile.css">
 <link rel="stylesheet" href="../css/sidebars.css">
-    <title>Document</title>
+<link rel="icon" href="/placement_cell/img/favicon.ico">
+    <title>Settings | Placement Cell</title>
 </head>
 <body class="pt-0" style="overflow-y:hidden;">
     <?php

@@ -71,7 +71,7 @@ else{
         max-height: calc(100vh - 230px);
       }
     </style>
-    <title>Document</title>
+    <title>Offers | Placement Cell</title>
 </head>
 <body>
     <?php

@@ -10,7 +10,8 @@ else{
 } ?>">
 <head>
     <?php require "../partials/_header.php"; ?>
-    <title>Document</title>
+    <title>(@<?php echo $user_details_fetch['user_name'].') ';
+    echo $user_details_fetch['person_name']; ?></title>
 </head>
 <body>
     <?php

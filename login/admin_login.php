@@ -13,7 +13,7 @@ else{
 } ?>">
 <head>
 <?php require "../partials/_header.php"; ?>
-    <title>Document</title>
+    <title>Admin Login | Placement Cell</title>
 </head>
 <body>
     <?php

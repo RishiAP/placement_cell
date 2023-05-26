@@ -74,7 +74,8 @@ else{
         max-height: calc(100vh - 230px);
       }
     </style>
-    <title>Document</title>
+    <title>(@<?php echo $user_details_fetch['user_name'].') ';
+    echo $user_details_fetch['person_name']; ?></title>
 </head>
 <body>
     <?php

@@ -10,7 +10,7 @@ else{
 } ?>">
 <head>
 <?php require "../partials/_header.php"; ?>
-    <title>Document</title>
+    <title>C-(@<?php echo $company_details_fetch['company_name']; ?>)</title>
 </head>
 <body>
     <?php
