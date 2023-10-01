@@ -235,6 +235,10 @@ else{
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
 <script src="../js/script.js"></script>
+<?php
+    $KEYS=parse_ini_file("../keys.env");
+    echo '<script>AdobeDC_Key="'.$KEYS['AdobeDC_Key'].'"</script>';
+?>
 <script src="../js/fetch_student_data.js"></script>
 <script>
   document.getElementById('candidateApproveButton').addEventListener('click',function () {

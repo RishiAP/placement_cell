@@ -67,7 +67,7 @@ setTimeout(function fetch_notifications() {
     if(this.responseText==="banned"){
         window.location.href="/placement_cell/login/student_login.php";
     }
-    else{
+    else if(this.responseText!=false){
     $data=JSON.parse(this.responseText);
     $data.forEach($each_data => {
         $new_noti=document.createElement('div');

@@ -40,7 +40,7 @@ function activateSection() {
         window.location.href="/placement_cell/login/student_login.php";
     }
       else if(this.responseText!=false){
-        var adobeDCView = new AdobeDC.View({clientId: "396cd659cc9c484bb88047702789074f", divId: "pdf_viewer"});
+        var adobeDCView = new AdobeDC.View({clientId: AdobeDC_Key, divId: "pdf_viewer"});
         adobeDCView.previewFile(
        {
         content:{ promise: Promise.resolve(_base64ToArrayBuffer(this.responseText)) },
@@ -75,14 +75,14 @@ function activateSection() {
     }
      else if(this.responseText!=false){
           $data=JSON.parse(this.responseText);
-        var adobeDCView = new AdobeDC.View({clientId: "396cd659cc9c484bb88047702789074f", divId: "high-school-marksheet-preview"});
+        var adobeDCView = new AdobeDC.View({clientId: AdobeDC_Key, divId: "high-school-marksheet-preview"});
         adobeDCView.previewFile(
        {
         content:{ promise: Promise.resolve(_base64ToArrayBuffer($data.high_school_marksheet)) },
           metaData: {fileName: "Resume.pdf"}
        });
        document.getElementById('high-school-marksheet-preview').style.display="block";
-        var adobeDCView = new AdobeDC.View({clientId: "396cd659cc9c484bb88047702789074f", divId: "intermediate-marksheet-preview"});
+        var adobeDCView = new AdobeDC.View({clientId: AdobeDC_Key, divId: "intermediate-marksheet-preview"});
         adobeDCView.previewFile(
        {
         content:{ promise: Promise.resolve(_base64ToArrayBuffer($data.intermediate_marksheet)) },
@@ -111,7 +111,7 @@ function _base64ToArrayBuffer(base64) {
 reader=new FileReader();
 document.getElementById('resume_doc').addEventListener('input',() =>{
     reader.onload=function (event){
-        var adobeDCView = new AdobeDC.View({clientId: "396cd659cc9c484bb88047702789074f", divId: "pdf_viewer"});
+        var adobeDCView = new AdobeDC.View({clientId: AdobeDC_Key, divId: "pdf_viewer"});
         adobeDCView.previewFile(
        {
         content:{ promise: Promise.resolve(_base64ToArrayBuffer(reader.result.split(',')[1])) },
@@ -140,7 +140,7 @@ document.getElementById('resume_doc_btn').addEventListener('click',()=> {
           document.getElementById("resume_message").innerHTML=`<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Success!</strong> Your resume is uploaded successfully.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
         document.getElementById('resume_delete_button').style.display="block";
         if(document.getElementById('pdf_viewer').innerHTML==''){
-            var adobeDCView = new AdobeDC.View({clientId: "396cd659cc9c484bb88047702789074f", divId: "pdf_viewer"});
+            var adobeDCView = new AdobeDC.View({clientId: AdobeDC_Key, divId: "pdf_viewer"});
         adobeDCView.previewFile(
        {
         content:{ promise: Promise.resolve(_base64ToArrayBuffer(window.resume_data.split(',')[1])) },
@@ -323,7 +323,7 @@ document.getElementById('high-school-marksheet').addEventListener('input',functi
     reader=new FileReader();
     reader.onload=function (event){
         window.high_school_marksheet=reader.result;
-        var adobeDCView = new AdobeDC.View({clientId: "396cd659cc9c484bb88047702789074f", divId: "high-school-marksheet-preview"});
+        var adobeDCView = new AdobeDC.View({clientId: AdobeDC_Key, divId: "high-school-marksheet-preview"});
         adobeDCView.previewFile(
             {
                 content:{ promise: Promise.resolve(_base64ToArrayBuffer(reader.result.split(',')[1])) },
@@ -343,7 +343,7 @@ document.getElementById('intermediate-marksheet').addEventListener('input',funct
         reader=new FileReader();
         reader.onload=function (event){
             window.intermediate_marksheet=reader.result;
-            var adobeDCView = new AdobeDC.View({clientId: "396cd659cc9c484bb88047702789074f", divId: "intermediate-marksheet-preview"});
+            var adobeDCView = new AdobeDC.View({clientId: AdobeDC_Key, divId: "intermediate-marksheet-preview"});
         adobeDCView.previewFile(
        {
         content:{ promise: Promise.resolve(_base64ToArrayBuffer(reader.result.split(',')[1])) },

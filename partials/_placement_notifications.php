@@ -23,4 +23,7 @@ session_start();
         }
         echo json_encode($all_data);
       }
+      else{
+        echo false;
+      }
 ?>

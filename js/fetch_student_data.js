@@ -50,7 +50,7 @@ function fetch_doc() {
     all_other_docs.forEach(doc => {
         doc.style.display="none";
     });
-    var adobeDCView = new AdobeDC.View({clientId: "396cd659cc9c484bb88047702789074f", divId: $data_to_input});
+    var adobeDCView = new AdobeDC.View({clientId: AdobeDC_Key, divId: $data_to_input});
         adobeDCView.previewFile(
        {
         content:{ promise: Promise.resolve(_base64ToArrayBuffer(this.responseText)) },

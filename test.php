@@ -46,4 +46,36 @@
 // );
 // file_put_contents("data/IndianSchoolBoards.json",json_encode($saving_data));
 // echo var_dump($saving_data);
+$token = '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';
+$url = 'https://api.openai.com/v1/chat/completions';
+
+$data = array(
+    "model"=> "text-davinci-003",
+    "messages"=> array(array("role"=> "user", "content"=> "Hello!"))
+);
+
+$payload = json_encode($data);
+
+$ch = curl_init($url);
+
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'Authorization: Bearer ' . $token
+));
+curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+
+$result = curl_exec($ch);
+curl_close($ch);
+
+$response = json_decode($result, true);
+
+if ($response && isset($response['choices'][0]['text'])) {
+    $completion = $response['choices'][0]['text'];
+    echo $completion;
+} else {
+    echo 'API request failed.';
+}
+var_dump($response);
 ?>

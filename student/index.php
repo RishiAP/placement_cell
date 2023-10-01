@@ -145,6 +145,10 @@ else{
 <script src="../js/imageCropper.js"></script>
 <script src="../js/manageProfilePhoto.js"></script>
 <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
+<?php
+    $KEYS=parse_ini_file("../keys.env");
+    echo '<script>AdobeDC_Key="'.$KEYS['AdobeDC_Key'].'"</script>';
+?>
 <script src="../js/fetch_student_data.js"></script>
 </body>
 </html>

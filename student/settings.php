@@ -390,6 +390,10 @@ else{
 <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
 <script src="../js/script.js"></script>
 <script src="../js/sidebars.js"></script>
+<?php
+    $KEYS=parse_ini_file("../keys.env");
+    echo '<script>AdobeDC_Key="'.$KEYS['AdobeDC_Key'].'"</script>';
+?>
 <script src="../js/biodata.js"></script>
 </body>
 </html>
